@@ -82,3 +82,4 @@ C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplica
 C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
 C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.InitialModel.resources
 C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication.csproj.GenerateResource.Cache
+C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.AddIsSubscribedToCustomer.resources
