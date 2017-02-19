@@ -1,0 +1,21 @@
+﻿@model List<WebApplication1.Models.Movie>
+
+@{
+    ViewBag.Title = "Movie List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Movie List</h2>
+
+@if (@Model == null)
+{
+    <h4>We dont have movies.</h4>
+}
+else
+{
+    foreach (var movie in @Model)
+    {
+        <li>@movie.Name</li>
+    }
+}
+
