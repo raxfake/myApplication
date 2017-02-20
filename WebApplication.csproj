@@ -251,6 +251,10 @@
     <Compile Include="Migrations\201702201724276_AddGenreForMovies.Designer.cs">
       <DependentUpon>201702201724276_AddGenreForMovies.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702201726354_AddValuesToGenre.cs" />
+    <Compile Include="Migrations\201702201726354_AddValuesToGenre.Designer.cs">
+      <DependentUpon>201702201726354_AddValuesToGenre.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -375,6 +379,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702201724276_AddGenreForMovies.resx">
       <DependentUpon>201702201724276_AddGenreForMovies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702201726354_AddValuesToGenre.resx">
+      <DependentUpon>201702201726354_AddValuesToGenre.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
