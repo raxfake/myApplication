@@ -34,7 +34,7 @@ namespace WebApplication1.Controllers
         [Route("customer/details/{id}")]
         public ActionResult Details(int id)
         {
-            var customer = this._context.Customers.SingleOrDefault(c => c.Id == id);
+            var customer = this._context.Customers.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id);
             
             if (customer == null)
             {
