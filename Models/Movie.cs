@@ -17,5 +17,7 @@ namespace WebApplication1.Models
         public DateTime ReleaseDate { get; set; }
         public DateTime DateAdded { get; set; }
         public byte NumberInStock { get; set; }
+        [Required]
+        public Genre Genre { get; set; }
     }
 }
