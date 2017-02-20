@@ -331,6 +331,7 @@
     <Content Include="Views\Movies\MovieList.cshtml" />
     <Content Include="Views\Customer\CustomersList.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

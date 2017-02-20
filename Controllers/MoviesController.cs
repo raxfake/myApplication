@@ -4,12 +4,26 @@ using System.Web.Mvc;
 using WebApplication1.Models;
 using System.Linq;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
+using System.Runtime.Remoting.Channels;
 using System.Web.Routing;
 
 namespace WebApplication1.Controllers
 {
     public class MoviesController : Controller
     {
+        private readonly ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         // GET: Movies
         public ActionResult Random()
         {
@@ -93,9 +107,20 @@ namespace WebApplication1.Controllers
         [Route("movies/list")]
         public ActionResult MovieList()
         {
-            var movieList = new List<Movie> {new Movie {Name = "Wall-E"}, new Movie {Name = "Bad Boys"}};
+            var movieList = this._context.Movies.Include(m => m.Genre).ToList();
 
-            return View();
+            return View(movieList);
+        }
+
+        public ActionResult Details(int id)
+        {
+            var movie = this._context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
+
+            if (movie == null)
+            {
+                this.HttpNotFound();
+            }
+            return View(movie);
         }
     }
 }
