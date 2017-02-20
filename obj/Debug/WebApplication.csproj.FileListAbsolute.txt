@@ -84,3 +84,5 @@ C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplica
 C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.AddIsSubscribedToCustomer.resources
 C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.AddMembershipType.resources
 C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.AddValuesToMembershipType.resources
+C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication.csprojResolveAssemblyReference.cache
+C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.AddRequiredStringLengthToCustomerName.resources

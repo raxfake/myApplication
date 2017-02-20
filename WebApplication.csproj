@@ -219,6 +219,10 @@
     <Compile Include="Migrations\201702191512308_AddValuesToMembershipType.Designer.cs">
       <DependentUpon>201702191512308_AddValuesToMembershipType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702200214385_AddRequiredStringLengthToCustomerName.cs" />
+    <Compile Include="Migrations\201702200214385_AddRequiredStringLengthToCustomerName.Designer.cs">
+      <DependentUpon>201702200214385_AddRequiredStringLengthToCustomerName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -318,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702191512308_AddValuesToMembershipType.resx">
       <DependentUpon>201702191512308_AddValuesToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702200214385_AddRequiredStringLengthToCustomerName.resx">
+      <DependentUpon>201702200214385_AddRequiredStringLengthToCustomerName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
