@@ -87,3 +87,4 @@ C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplica
 C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication.csprojResolveAssemblyReference.cache
 C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.AddRequiredStringLengthToCustomerName.resources
 C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.AddNameInMembershipType.resources
+C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.UpdateMembershipTypeName.resources
