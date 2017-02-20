@@ -91,3 +91,4 @@ C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplica
 C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.AddBirthdayDateInToCustomer.resources
 C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.AddMovieTable.resources
 C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.AddRequiredAndStringLengthToMovieName.resources
+C:\Users\iRomil\Documents\Visual Studio 2015\Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Migrations.AddGenreReleaseDateAddedDateNumberInStockProperty.resources
