@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Runtime.Remoting.Channels;
 using System.Web.Routing;
+using WebApplication1.ViewModels;
 
 namespace WebApplication1.Controllers
 {
@@ -65,10 +66,10 @@ namespace WebApplication1.Controllers
             return Content("id = " + id);
         }
 
-        public ActionResult Edit(int id)
-        {
-            return Content("id = " + id);
-        }
+        //public ActionResult Edit(int id)
+        //{
+        //    return Content("id = " + id);
+        //}
 
         public ActionResult Index(int? pageNumber, string sortBy)
         {
@@ -121,6 +122,47 @@ namespace WebApplication1.Controllers
                 this.HttpNotFound();
             }
             return View(movie);
+        }
+
+        public ActionResult MoviesForm()
+        {
+            var model = new MovieFormViewModel
+            {
+                GenreList = _context.Genres.ToList()
+            };
+            return View(model);
+        }
+
+        public ActionResult AddUpdateMovie(MovieFormViewModel model)
+        {
+            if (model.Movie.Id == 0)
+            {
+                _context.Movies.Add(model.Movie);
+            }
+            else
+            {
+                var movie = _context.Movies.Single(m => m.Id == model.Movie.Id);
+
+                movie.DateAdded = model.Movie.DateAdded;
+                movie.ReleaseDate = model.Movie.ReleaseDate;
+                movie.Name = model.Movie.Name;
+                movie.NumberInStock = model.Movie.NumberInStock;
+                movie.GenreId = model.Movie.GenreId;
+            }
+
+            _context.SaveChanges();
+            return this.RedirectToAction("MovieList", "Movies");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var movie = _context.Movies.SingleOrDefault(m => m.Id == id);
+            var model = new MovieFormViewModel
+            {
+                GenreList = _context.Genres.ToList(),
+                Movie = movie
+            };
+            return View("MoviesForm", model);
         }
     }
 }

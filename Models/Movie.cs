@@ -12,12 +12,18 @@ namespace WebApplication1.Models
         [Required]
         [StringLength(255)]
         public string Name { get; set; }
-
-        public byte GenreId { get; set; }
-        public DateTime ReleaseDate { get; set; }
-        public DateTime DateAdded { get; set; }
-        public byte NumberInStock { get; set; }
         [Required]
+        [Display(Name="Genre")]
+        public byte GenreId { get; set; }
+
+        [Display(Name = "Release Date")]
+        public DateTime ReleaseDate { get; set; }
+
+        [Display(Name = "Added on")]
+        public DateTime DateAdded { get; set; }
+
+        [Display(Name="In Stock")]
+        public byte NumberInStock { get; set; }
         public Genre Genre { get; set; }
     }
 }
