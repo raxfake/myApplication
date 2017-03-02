@@ -50,20 +50,62 @@ namespace WebApplication1.Controllers
         {
             var membershipItems = _context.MembershipTypes.ToList();
 
-            var newCustomerViewModel = new NewCustomerViewModel
+            var newCustomerViewModel = new CustomerFormViewModel
             {
                 MembershipTypes = membershipItems
             };
-            return View(newCustomerViewModel);
+            return View("CustomerForm", newCustomerViewModel);
         }
 
-       // private IEnumerable<Customer> GetCustomers()
-       // {
-       //     return new List<Customer>
-       //     {
-       //         new Customer { Id = 1, Name = "Shruti" },
-       //         new Customer { Id = 2, Name = "Archana" }
-       //     };
-       //}
+        [HttpPost]
+        public ActionResult AddUpdateCustomer(CustomerFormViewModel model)
+        {
+            if (model.Customer.Id == 0)
+            {
+                _context.Customers.Add(model.Customer);
+            }
+            else
+            {
+                var customer = _context.Customers.Single(c => c.Id == model.Customer.Id);
+
+                customer.Name = model.Customer.Name;
+                customer.BirthdayDate = model.Customer.BirthdayDate;
+                customer.MembershipTypeId = model.Customer.MembershipTypeId;
+                customer.IsSubscribedToNewsLetter = model.Customer.IsSubscribedToNewsLetter;
+            }
+
+            _context.SaveChanges();
+
+            return this.RedirectToAction("CustomersList", "Customer");
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
+
+            if (customer == null)
+            {
+                return this.HttpNotFound();
+            }
+
+            var customerModel = new CustomerFormViewModel
+            {
+                Customer = customer,
+                MembershipTypes = _context.MembershipTypes.ToList()
+            };
+
+            return this.View("CustomerForm", customerModel);
+        }
+
+        // private IEnumerable<Customer> GetCustomers()
+        // {
+        //     return new List<Customer>
+        //     {
+        //         new Customer { Id = 1, Name = "Shruti" },
+        //         new Customer { Id = 2, Name = "Archana" }
+        //     };
+        //}
+
+
     }
 }
