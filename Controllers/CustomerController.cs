@@ -45,21 +45,33 @@ namespace WebApplication1.Controllers
             return View(customer);
         }
 
-        [Route("customer/add")]
+        //[Route("customer/add")]
         public ActionResult NewCustomer()
         {
             var membershipItems = _context.MembershipTypes.ToList();
 
             var newCustomerViewModel = new CustomerFormViewModel
             {
+                Customer = new Customer(),
                 MembershipTypes = membershipItems
             };
             return View("CustomerForm", newCustomerViewModel);
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult AddUpdateCustomer(CustomerFormViewModel model)
         {
+            if (!this.ModelState.IsValid)
+            {
+                var viewModel = new CustomerFormViewModel
+                {
+                    Customer = model.Customer,
+                    MembershipTypes = _context.MembershipTypes.ToList()
+                };
+
+                return this.View("CustomerForm", viewModel);
+            }
             if (model.Customer.Id == 0)
             {
                 _context.Customers.Add(model.Customer);
